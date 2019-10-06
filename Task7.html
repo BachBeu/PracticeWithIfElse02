@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<input id="so1" type="text" placeholder="Nhập số thứ nhất">
+<input id="so2" type="text" placeholder="Nhập số thứ hai">
+<input id="so3" type="text" placeholder="Nhập số thứ 3">
+<button type="button" onclick="showMessage()">Result</button>
+<br>
+<script>
+    function showMessage(){
+        let a = parseFloat(document.getElementById('so1').value);
+        let b = parseFloat(document.getElementById('so2').value);
+        let c = parseFloat(document.getElementById('so3').value);
+        let Delta = (b*b) - (4*a*c);
+        let x12 = -(b/2*a);
+        let x1 ;
+        let x2 ;
+        alert("phương trình bậc 2 bạn vừa nhập là: " + a + "x*x" + "+" + b + "x" + "+" + c + " = 0");
+        if(Delta < 0){
+            alert("Phương trình vô nghiệm");
+        }else if(Delta == 0){
+            x1 = -(b/2*a);
+            alert("phương trình có 1 nghiệm kép: " + "x1 = x2"  + x12  );
+        }else {
+            x1 = ((-b + Math.sqrt(Delta)) / (2 * a));
+            x2 = ((-b - Math.sqrt(Delta)) / (2 * a));
+            alert("phương trình có 2 nghiệm là: " + "x1 = " + x1 + "và x2 = " + x2);
+        }
+    }
+
+</script>
+</body>
+</html>
